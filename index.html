@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="images/defaultLogo.png" type="image/x-icon" />
+    <title>Buzz or Lose</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+        </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+        </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+        </script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+</head>
+
+<body>
+    <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    Index page starts here! 
+    +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+    <audio id="gameTune1" loop>
+        <source src="" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+    <audio id="gameTune2" loop>
+        <source src="sounds/tune2.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+    <audio id="gameTune3" loop>
+        <source src="sounds/tune3.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+    <audio id="gameTune4" loop>
+        <source src="sounds/melanin.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+
+    <audio id="correctAnswer">
+        <source src="sounds/correct_answer.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+    <audio id="wrongAnswer">
+        <source src="sounds/wrong_answer.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+    <div class="mainContainer indexBody" id="indexPage">
+        <header>
+            <div class="headerWrap">
+
+                <!-- Top team score container -->
+                <div class="topTeams">
+                    <img src="images/top_teams.png" alt="Top Teams Icon" data-toggle="modal"
+                        data-target="#topTeamsList">
+                </div>
+                <!-- Modal -->
+                <div id="topTeamsList" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+
+                        <!-- Modal content-->
+                        <div class="modal-content" id="modalBody">
+                            <div class="topTeamsChampionshipImage">
+                                <img src="images/topTeamIcon.png" alt="">
+                            </div>
+                            <div class="modal-body" id="topTeamTable">
+                                <div class="topTeamTableWrap">
+                                    <table class="table" id="myTable">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Teams</th>
+                                                <th scope="col">Scores</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="#tableData">
+                                            <tr></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal"
+                                    id="closeModal">Close</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <!-- Top player container -->
+                <!-- <div class="topPlayers">
+                    <img src="images/top_players.png" alt="Top Players Icon" data-toggle="modal" data-target="#myModal">
+                </div> -->
+
+                <!-- Modal -->
+                <div id="myModal" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="topTeamsChampionshipImage">
+                                <img src="images/topPlayersIcon.png" alt="">
+                            </div>
+                            <div class="modal-body">
+                                <div class="topTeamTableWrap">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">#</th>
+                                                <th scope="col">Players</th>
+                                                <th scope="col">QA</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">1</th>
+                                                <td>Princess Shonuga</td>
+                                                <td>9</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">2</th>
+                                                <td>Joel White</td>
+                                                <td>7</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">3</th>
+                                                <td>Sam Hare</td>
+                                                <td>6</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">3</th>
+                                                <td>Joki </td>
+                                                <td>6</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">4</th>
+                                                <td>Lisa Collins </td>
+                                                <td>5</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal"
+                                    id="closeModal">Close</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section class="indexSections">
+            <h1 class="mainTopic">Buzz or Lose</h1>
+            <button class="indexStartButton" id="startGame">START</button>
+
+            <div class="aboutButton" data-toggle="modal" data-target="#aboutModal">
+                <p>?</p>
+            </div>
+
+            <!-- Modal -->
+            <div id="aboutModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-body aboutModalDisplay">
+                            <div class="sideNavBar">
+                                <button id="instructionsNavButton" class="aboutNavButton">Instructions</button>
+                                <button id="aboutNavButton" class="aboutNavButton">About</button>
+                                <button id="documentationsNavButton" class="aboutNavButton">Documentation</button>
+                            </div>
+                            <div class="helpAbout">
+                            <div id="instructions" class="instructions">
+                                    <h4>How To Play</h4>
+                                    <p>
+                                        Game Instructions
+                                        Buzz or Lose is a small charade game that is used to test your general knowledge
+                                        skills .
+                                        Each teams need to answer a question (choice of category), and perform the
+                                        action exercise.
+                                        The team with the highest cumulative score at the end of the game wins! 
+                                    </p>
+
+                                    <p> 
+                                        2 Teams 3players each <br>
+                                        Ages 10 and up
+                                    </p>
+
+                                    <p>Object: Score the most points after 6 rounds to win the game.</p>
+
+
+                                    <p>
+                                        SetUp:
+                                        Choose three players to keep throughout the game,
+                                        A captain to represent the team.
+                                        <br>
+
+                                        <ul>
+                                            <h4>Playing the Game:</h4>
+                                            <li>
+                                                Each question in “Buzz or Lose” is of multiple-choice and it consist of
+                                                6 rounds
+                                            </li>
+
+                                            <li>
+                                                The teams can decide the number of rounds they want to play.
+                                            </li>
+
+                                            <li>
+                                                You must always answer the question correctly to score 10 points and
+                                                The total score for the game is based on your responses to all
+                                                questions.
+                                            </li>
+                                            <li>
+                                                Only the captain can play for each team so each team should choose a
+                                                team captain
+                                            </li>
+                                            <li>
+                                                After responding to a question, click on the "Next Question" button at
+                                                the bottom to go to the next question.
+                                                the Game will be played respectively, when one team respond to a
+                                                question, the other question will be given to the other team.
+                                                If you wish to play the game again , the questions and their respective
+                                                responses will be randomized.
+                                            </li>
+                                        </ul>
+
+                                    </p>
+
+                                </div>
+
+                                <div id="about" class="about">
+                                    <h4>About</h4>
+                                </div>
+
+                                <div id="documentation" class="documentation">
+                                    <h4>Documentation</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal"
+                                id="closeModal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="addQuestions" data-toggle="modal" data-target="#addQuestions">
+                <p>Add Questions</p>
+            </div>
+            <div id="volumeUp" class="gameSettingsButton">
+                <p><i class="fas fa-stop"></i></p>
+            </div>
+
+
+            <!-- Modal -->
+            <div id="addQuestions" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-body aboutModalDisplay">
+                            <div class="aboutInfoSection addQuestionsContainer">
+                                <h4>Add Quiz Questions and Answers</h4>
+                                <textarea name="" id="quizQuestions" cols="50" rows="10"></textarea>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-success" data-dismiss="modal" id="">Save Text</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                                id="closeModal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    Index page container end here! 
+    +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+
+    <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    Setup team one page starts here! 
+    +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+    <div class="setupTeamOneContainer" id="teamOneDetails">
+        <header>
+            <div class="headerContainer">
+                <h2 class="gameTitle">Buzz or Lose</h2>
+            </div>
+        </header>
+        <section class="subSections">
+
+            <div class="formSection">
+                <div class="setupTeamHeader">
+                    <p>Setup Team One</p>
+                </div>
+                <form action="setup_team_two.html">
+                    <section class="teamInformation">
+                        <input type="text" id="teamOneName" maxlength="12" class="teamName" name="name"
+                            placeholder="Team Name">
+                        <br>
+                        <input type="text" id="teamOnePlayerOneName" class="playerNames" name="name"
+                            placeholder="Player One Name">
+                        <!-- <div class="uploadImageWrap">
+                            <p>Add Image</p>
+                            <input class="uploadImage" type="file" name="" id="">
+                        </div> -->
+                        <br>
+                        <input type="text" id="teamOnePlayerTwoName" class="playerNames" name="name"
+                            placeholder="Player Two Name">
+                        <!-- <div class="uploadImageWrap">
+                            <p>Add Image</p>
+                            <input class="uploadImage" type="file" name="" id="">
+                        </div> -->
+                        <br>
+                        <input type="text" id="teamOnePlayerThreeName" class="playerNames" name="name"
+                            placeholder="Player Three Name">
+                        <!-- <div class="uploadImageWrap">
+                            <p>Add Image</p>
+                            <input class="uploadImage" type="file" name="" id="">
+                        </div> -->
+                    </section>
+                    <div class="buttons">
+                        <button class="setupTeamOneNextButton allButton" id="setupTeamOneNextButton"
+                            type="submit">NEXT</button>
+                    </div>
+                </form>
+                <button class="setupTeamOneBackButton allButton" id="setupTeamOneBackButton" type="submit">BACK</button>
+            </div>
+    </div>
+
+    </section>
+    </div>
+
+    <!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    End of setup team one page 
+    ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+
+    <!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    Setup team two page starts here! 
+    ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+    <div class="setupTeamTwoContainer" id="teamTwoDetails">
+        <header>
+            <div class="headerContainer">
+                <h2 class="gameTitle">Buzz or Lose</h2>
+            </div>
+        </header>
+        <section class="subSections">
+
+            <div class="formSection">
+                <div class="setupTeamHeader">
+                    <p>Setup Team Two</p>
+                </div>
+                <form action="options.html">
+                    <section class="teamInformation">
+                        <input type="text" id="teamTwoName" maxlength="12" class="teamName" name="name"
+                            placeholder="Team Name">
+                        <br>
+                        <input type="text" id="teamTwoPlayerOneName" class="playerNames" name="name"
+                            placeholder="Player One Name">
+                        <!-- <div class="uploadImageWrap">
+                            <p>Add Image</p>
+                            <input class="uploadImage" type="file" name="" id="">
+                        </div> -->
+                        <br>
+                        <input type="text" id="teamTwoPlayerTwoName" class="playerNames" name="name"
+                            placeholder="Player Two Name">
+                        <!-- <div class="uploadImageWrap">
+                            <p>Add Image</p>
+                            <input class="uploadImage" type="file" name="" id="">
+                        </div> -->
+                        <br>
+                        <input type="text" id="teamTwoPlayerThreeName" class="playerNames" name="name"
+                            placeholder="Player Three Name">
+                        <!-- <div class="uploadImageWrap">
+                            <p>Add Image</p>
+                            <input class="uploadImage" type="file" name="" id="">
+                        </div> -->
+                    </section>
+                    <div class="buttons">
+                        <button class="setupTeamTwoNextButton allButton" id="setupTeamTwoNextButton"
+                            type="submit">NEXT</button>
+                    </div>
+                </form>
+                <button class="setupTeamTwoBackButton allButton" id="setupTeamTwoBackButton"
+                    type="submit">BACK</button></a>
+            </div>
+    </div>
+
+    </section>
+    </div>
+
+    <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+    Setup team two page ends here! 
+    +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+
+    <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+    Options page starts here 
+    +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+    <div class="optionsContainer" id="optionsPage">
+        <header>
+            <div class="headerContainer">
+                <h2 class="gameTitle">Buzz or Lose</h2>
+            </div>
+        </header>
+        <section class="questionSections">
+            <div class="teamOneContainer">
+                <div class="teamOneScore">
+                    <h3 id="teamAName"></h3>
+                    <p></p>
+                </div>
+                <div class="playingTeamContainer">
+                    <div class="playerWrap">
+                        <img class="playerImage" src="images/defaultLogo.png" alt="">
+                        <p id="teamOneplayerOne"></p>
+                    </div>
+
+                    <div class="playerWrap">
+                        <img class="playerImage" src="images/defaultLogo.png" alt="">
+                        <p id="teamOneplayerTwo"></p>
+                    </div>
+
+                    <div class="playerWrap">
+                        <img class="playerImage" src="images/defaultLogo.png" alt="">
+                        <p id="teamOneplayerThree"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="questionsContainer">
+                <div class="setupTeamHeader">
+                    <p>Choose your Options</p>
+                </div>
+                <div class="optionSection">
+                    <form action="question.html">
+                        <section class="teamInformation">
+
+                            <select id="numberOfRoundChoosed" class="optionForms" name="numberRounds">
+                                <option value="" disabled selected>Number of rounds</option>
+                                <option id="one" value="1">1</option>
+                                <option id="2" value="2">2</option>
+                                <option id="3" value="3">3</option>
+                                <option id="4" value="4">4</option>
+                                <option id="5" value="5">5</option>
+                                <option id="6" value="6">6</option>
+                            </select>
+
+                            <select class="optionForms" name="numberOfQuestionPerRound" id="numberOfQuestionPerRound">
+                                <option value="" disabled selected>number of questions per round</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                            </select>
+
+                            <select class="optionForms" name="optionForms" id="captainA">
+                                <option value="" disabled selected>Select Team - A (Captain)</option>
+                                <option id="teamACaptainOne"></option>
+                                <option id="teamACaptainTwo"></option>
+                                <option id="teamACaptainThree"></option>
+                            </select>
+
+                            <select class="optionForms" name="optionForms" id="captainB">
+                                <option value="" disabled selected>Select Team - B (Captain)</option>
+                                <option id="teamBCaptainOne"></option>
+                                <option id="teamBCaptainTwo"></option>
+                                <option id="teamBCaptainThree"></option>
+                            </select>
+
+                            <!-- <select class="optionForms" name="optionForms" id="">
+                                <option value="" disabled selected>Quiz Categories</option>
+                                <option value="">General Questions</option>
+                                <option value="">Liberia</option>
+                                <option value="">English, Mathematics, Science and History</option>
+                                <option value="">English and Mathematics</option>
+                            </select> -->
+                        </section>
+                        <div class="buttons">
+                            <button class="nextBtn allButton" id="optionPageNextButton" type="submit">NEXT</button>
+                        </div>
+                    </form>
+                    <button class="backBtn allButton" id="optionPageBackButton" type="submit">BACK</button>
+
+                </div>
+            </div>
+            <div class="teamTwoContainer">
+                <div class="teamTwoScore">
+                    <h3 id="teamBName">TEAM B</h3>
+                    <p></p>
+                </div>
+                <div class="playingTeamContainer">
+                    <div class="playerWrap">
+                        <img class="playerImage" src="images/defaultLogo.png" alt="">
+                        <p id="teamTwoplayerOne"></p>
+                    </div>
+
+                    <div class="playerWrap">
+                        <img class="playerImage" src="images/defaultLogo.png" alt="">
+                        <p id="teamTwoplayerTwo"></p>
+                    </div>
+
+                    <div class="playerWrap">
+                        <img class="playerImage" src="images/defaultLogo.png" alt="">
+                        <p id="teamTwoplayerThree"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    Options page ends here 
+    ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+
+
+    <!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    Questions page start here! 
+    ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+    <div class="questionPageContainer" id="questionsPage">
+        <header>
+            <div class="headerContainer">
+                <h2 class="gameTitle">Buzz or Lose</h2>
+            </div>
+        </header>
+        <section class="questionSections">
+            <div class="teamOneContainer">
+                <div id="myDiv" class="teamOneScore team">
+                    <h3 id="gameplayTeamAName"></h3>
+                    <!-- <div id="timer">
+                            <div id ="counter">6</div>
+                            <div id ="btimeGauge"></div>
+                            <div id ="timeGauge"></div>
+                        </div> -->
+                    <p>00</p>
+                </div>
+                <div class="playingTeamContainer">
+                    <div class="playerWrap">
+                        <img class="playerImage" src="images/defaultLogo.png" alt="">
+                        <p id="gameplayTeamOneplayerOne"></p>
+                    </div>
+
+                    <div class="playerWrap">
+                        <img class="playerImage" src="images/defaultLogo.png" alt="">
+                        <p id="gameplayTeamOneplayerTwo"></p>
+                    </div>
+
+                    <div class="playerWrap">
+                        <img class="playerImage" src="images/defaultLogo.png" alt="">
+                        <p id="gameplayTeamOneplayerThree"></p>
+                    </div>
+                </div>
+
+                <div class="numberOfRoundContainer">
+                    <h4>Number of Round</h4>
+                    <p id="numberOfRoundPlayingFor"></p>
+                </div>
+            </div>
+            <div class="questionsContainer">
+                <div class="timer">
+                    <h4>TIMER</h4>
+
+                    <p id="timer">10</p>
+                    <!-- <div id ="counter">6</div>
+                        <div id ="btimeGauge"></div>
+                        <div id ="timeGauge"></div> -->
+                </div>
+                <div class="question">
+                    <p id="question"></p>
+                </div>
+                <div class="answerSection" id="answersContainer">
+                    <div id="ansWrap">
+                        <label for="">A.</label>
+                        <p class="answers" id="option1">Momoh</p>
+                        <div style="clear: both;"></div>
+                        <label for="">B.</label>
+                        <p class="answers" id="wrongAns1">Joel White</p>
+                        <div style="clear: both;"></div>
+                        <label for="">C.</label>
+                        <p class="answers" id="wrongAns2">Lisa Collins</p>
+                        <div style="clear: both;"></div>
+                        <label for="">D.</label>
+                        <p class="answers" id="wrongAns3">Princess Shonuga</p>
+                    </div>
+                </div>
+
+                <div class="answerCheck">
+                    <button id="confirmAnswer" class="confirmQuestion" type="submit">Confirm Answer</button>
+                    <button class="nextQuestion" id="nextQuestion" onclick="myFunction()" type="submit">Next
+                        Question</button>
+                    <button class="roundSummery btn-primary" id="roundSummery" type="submit" data-toggle="modal"
+                        data-target="#roundUpPopUp">Round Result</button>
+
+                    <button class="gameResult btn-primary" id="gameResult" type="submit">Game Result</button>
+                </div>
+            </div>
+            <div class="teamTwoContainer">
+                <div class="teamTwoScore team" id='bScore'>
+                    <h3 id="gameplayTeamBName">TEAM B</h3>
+                    <p>00</p>
+                </div>
+                <div class="playingTeamContainer">
+                    <div class="playerWrap">
+                        <img class="playerImage" src="images/defaultLogo.png" alt="">
+                        <p id="gameplayTeamTwoplayerOne"></p>
+                    </div>
+
+                    <div class="playerWrap">
+                        <img class="playerImage" src="images/defaultLogo.png" alt="">
+                        <p id="gameplayTeamTwoplayerTwo"></p>
+                    </div>
+
+                    <div class="playerWrap">
+                        <img class="playerImage" src="images/defaultLogo.png" alt="">
+                        <p id="gameplayTeamTwoplayerThree"></p>
+                    </div>
+                </div>
+                <!-- <a href="index.html"> -->
+                <img id="exitLink" src="images/exitBtn.png">
+                <!-- <button class="exitBtn" type="submit">Exit Game</button>  -->
+
+            </div>
+
+
+            <!-- Round summery pop up modal -->
+            <!-- Modal -->
+            <div id="roundUpPopUp" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="roundTrophy">
+                            <img src="images/trophy.png" alt="Trophy" width="50">
+                        </div>
+                        <div class="modal-body">
+                            <p id="roundName">Round Score</p>
+                            <table class="table roundUpTable">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 200px;" scope="col" id="teamOneRound">Team One</th>
+                                        <th style="width: 200px;" scope="col" id="teamTwoRound">Team Two</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td id="teamOneRoundScore">99</td>
+                                        <td id="teamTwoRoundScore">99</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal"
+                                id="closeRoundSummery">Close</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+    </div>
+
+    <!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++F+++++
+        Questions page ends here!
+    +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+
+
+    <!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    Game result page start here! 
+    ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+    <div class="questionPageContainer" id="gameResultPage">
+        <header>
+            <div class="headerContainer">
+                <h2 class="gameTitle">Buzz or Lose</h2>
+            </div>
+        </header>
+        <div class="finishUpWrap">
+            <div class="finishUpTrophy">
+                <img src="images/trophy.png" alt="Trophy" width="50">
+            </div>
+
+            <div class="finishUpTitle">
+                <p>Game Score</p>
+            </div>
+
+            <div class="finishUpStatistics">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th style="width: 320px;" scope="col" id="finishUpTeamOne">Team One</th>
+                            <th style="width: 220px;" scope="col" id="finishUpTotalScore">30-50</th>
+                            <th style="width: 320px;" scope="col" id="finishUpTeamTwo">Team Two</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <button class="btn btn-danger" id="playAgain">Play Again</button>
+        </div>
+    </div>
+
+    <!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++F+++++
+    Game result page ends here!
+    +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+
+
+
+
+
+
+
+
+
+
+    <script src="js/about_game.js"></script>
+    <script src="js/connect_pages.js"></script>
+    <script src="js/team_information.js"></script>
+    <script src="js/game_information.js"></script>
+    <script src="js/quizcontoller.js"></script>
+    <script src="js/question.js"></script>
+    <script src="js/match.js"></script>
+    <script src="js/sound.js"></script>
+    <script src="js/topscores.js"></script>
+
+</body>
+
+</html>
